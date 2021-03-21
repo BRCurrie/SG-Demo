@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { Store } from "@ngrx/store";
 import { Observable } from "rxjs";
 
-import * as userStore from "../../store/reducers";
+import * as userStore from "../../store/selectors/user.selectors";
 import { User } from "../../models/user";
 
 @Component({
@@ -13,7 +13,6 @@ import { User } from "../../models/user";
 export class UsersContainerComponent implements OnInit {
   users$: Observable<User[]> = this.store.select(userStore.selectAllUsers);
 
-  // constructor() {}
   constructor(private store: Store<{ users: User[] }>) {}
 
   ngOnInit(): void {
