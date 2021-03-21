@@ -7,7 +7,9 @@ import {
 } from "@ngrx/store";
 import { environment } from "src/environments/environment";
 
-export interface AppState {}
+export interface AppState {
+  // routerReducer
+}
 
 export const reducers: ActionReducerMap<AppState> = {};
 
