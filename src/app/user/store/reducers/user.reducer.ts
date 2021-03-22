@@ -9,9 +9,7 @@ export interface State extends EntityState<User> {
   // additional entities state properties
 }
 
-export const adapter: EntityAdapter<User> = createEntityAdapter<User>({
-  // selectId: (user) => user.id,
-});
+export const adapter: EntityAdapter<User> = createEntityAdapter<User>();
 
 export const initialState: State = adapter.getInitialState({
   // additional entity state properties
@@ -47,6 +45,9 @@ export const userReducer = createReducer(
   on(UserActions.loadUsersSuccess, (state, action) =>
     adapter.setAll(action.users, state)
   ),
+  on(UserActions.selectUser, (state, { userId }) => {
+    return { ...state, id: userId };
+  }),
   on(UserActions.loadUsersFail, (state, action) =>
     adapter.setAll(action.error, state)
   ),

@@ -9,13 +9,22 @@ import * as fromUser from "./store/reducers/user.reducer";
 import { EffectsModule } from "@ngrx/effects";
 import { UserEffects } from "./store/effects/user.effects";
 import { HttpClientModule } from "@angular/common/http";
+import { ReactiveFormsModule } from "@angular/forms";
+import { UserFormContainerComponent } from "./containers/user-form-container/user-form-container.component";
+import { UserFormComponent } from "./components/user-form/user-form.component";
 
 @NgModule({
-  declarations: [UsersContainerComponent, UserListItemComponent],
+  declarations: [
+    UsersContainerComponent,
+    UserListItemComponent,
+    UserFormContainerComponent,
+    UserFormComponent,
+  ],
   imports: [
     CommonModule,
     UserRoutingModule,
     HttpClientModule,
+    ReactiveFormsModule,
     StoreModule.forFeature(fromUser.usersFeatureKey, fromUser.reducer),
     EffectsModule.forFeature([UserEffects]),
   ],

@@ -1,0 +1,33 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <label>
+    <h4>Name:</h4>
+  </label>
+  <input
+  type="text"
+  formControlName="name"
+  placeholder="First and Last name"
+  >
+  <input type="text" formControlName="username" placeholder="username">
+  <input type="email" formControlName="email"  placeholder="email">
+
+  <div formGroupName="address">
+    <label>
+      <h4>Address:</h4>
+    </label>
+    <input type="text" formControlName="street">
+    <input type="text" formControlName="suite">
+    <input type="text" formControlName="city">
+    <input type="text" formControlName="zipcode">
+  </div>
+  <div formGroupName="company">
+    <label><h4>
+      Company:
+    </h4>
+  </label>
+    <input type="text" formControlName="name">
+    <input type="text" formControlName="catchPhrase">
+    <input type="text" formControlName="bs">
+  </div>
+
+  <button type="submit">Submit</button>
+</form>

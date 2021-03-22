@@ -1,0 +1,6 @@
+<app-user-form
+[user]="user$ | async"
+(create)="onCreate($event)"
+(update)="onUpdate($event)"
+(remove)="onRemove($event)"
+></app-user-form>

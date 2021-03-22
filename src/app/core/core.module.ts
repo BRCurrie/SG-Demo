@@ -8,12 +8,14 @@ import { StoreRouterConnectingModule, routerReducer } from "@ngrx/router-store";
 import { StoreDevtoolsModule } from "@ngrx/store-devtools";
 // StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
 import { environment } from "src/environments/environment";
+import { ReactiveFormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
     HttpClientModule,
+    ReactiveFormsModule,
     StoreModule.forRoot(reducers, {
       metaReducers,
       runtimeChecks: {
