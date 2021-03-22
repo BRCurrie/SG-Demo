@@ -1,1 +1,18 @@
-<div class="user">{{ user.name }}</div>
+<div class="user">
+  <h2>
+    Name: {{ user.name }}
+  </h2>
+  <div>
+    <p>Username: {{user.username}}</p>
+    <p>Email: {{user.email}}</p>
+    <p>Phone: {{ user.phone }}</p>
+    <p>Website: {{user.website}}</p>
+  </div>
+  <div>
+    <h4>Employer:</h4>
+    <p>{{ user.company.name }}: {{  user.company.catchPhrase }}</p>
+  </div>
+  <button routerLink="/posts/{{user.id}}" >Posts by {{ user.name }}</button>
+</div>
+
+
